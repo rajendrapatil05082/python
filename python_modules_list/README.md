@@ -1,3 +1,8 @@
+# You can also run this in your Python shell to get a list of built-in modules:
+```python
+help('modules')
+```
+
 
 # os module
 
