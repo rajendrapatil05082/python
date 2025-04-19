@@ -51,7 +51,9 @@ In this case, `my_module` is a Python module containing the `add` function and a
 
 ### Idiom(Running Code Conditionally in Python Scripts)
  
+```python
 __name__ == "__main__" 
+```
 
 __name__ == "__main__"
 In Python, if __name__ == "__main__": is a common pattern used to distinguish between code that should run when a script is executed directly versus when it is imported as a module.
