@@ -43,8 +43,79 @@ result = my_module.add(10, 5)
 print(result)
 
 ```
-
 In this case, `my_module` is a Python module containing the `add` function and a variable `result`.
+
+
+
+### __name__ == "__main__"  Idiom(Running Code Conditionally in Python Scripts)
+
+__name__ == "__main__"
+In Python, if __name__ == "__main__": is a common pattern used to distinguish between code that should run when a script is executed directly versus when it is imported as a module.
+
+🔹 1. __name__ – What is it?
+In every Python file, there's a built-in variable called __name__.
+
+When a Python file is run directly, __name__ is set to "__main__".
+
+When the same file is imported as a module, __name__ is set to the module's name (like module1, etc.).
+
+
+🔹 2. The Conditional: if __name__ == "__main__":
+This is a conditional check to see whether the current file is being run directly or being imported.
+
+✅ If running the file directly — it runs the code inside the if block.
+
+❌ If the file is imported — it skips the code inside the if block.
+
+## Note: This lets you run certain code only when the file is run directly, not when it's imported
+
+```python
+# module1.py
+
+def add(a, b):
+    return a + b
+
+print(f"module1 name is: {__name__}")
+
+if __name__ == "__main__":
+    result = add(2, 4)
+    print("Running directly:", result)
+```
+When you run module1.py directly:
+python3 module1.py
+
+Output
+```yaml
+module1 name is: __main__
+Running directly: 6
+```
+
+When you import module1 from another script:
+
+```python
+# module2.py
+
+import module1
+
+result = module1.add(10, 2)
+print("From module2:", result)
+```
+
+python3 module2.py
+```pgsql
+module1 name is: module1
+From module2: 12
+```
+
+1. __name__ – What is it?
+In every Python file, there's a built-in variable called __name__.
+
+When a Python file is run directly, __name__ is set to "__main__".
+
+When the same file is imported as a module, __name__ is set to the module's name (like module1, math, etc.).
+
+
+
 
 ### Packages
 
