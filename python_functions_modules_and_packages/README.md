@@ -47,7 +47,11 @@ In this case, `my_module` is a Python module containing the `add` function and a
 
 
 
-### __name__ == "__main__"  Idiom(Running Code Conditionally in Python Scripts)
+
+
+### Idiom(Running Code Conditionally in Python Scripts)
+ 
+__name__ == "__main__" 
 
 __name__ == "__main__"
 In Python, if __name__ == "__main__": is a common pattern used to distinguish between code that should run when a script is executed directly versus when it is imported as a module.
@@ -106,13 +110,6 @@ python3 module2.py
 module1 name is: module1
 From module2: 12
 ```
-
-1. __name__ – What is it?
-In every Python file, there's a built-in variable called __name__.
-
-When a Python file is run directly, __name__ is set to "__main__".
-
-When the same file is imported as a module, __name__ is set to the module's name (like module1, math, etc.).
 
 
 
