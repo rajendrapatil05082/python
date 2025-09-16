@@ -72,6 +72,28 @@ new_list.sort(key=str)
 print(new_list)   # [1, 2, 3, 4, 5, 6, 'banana']
 ```
 
+Key Differences
+``` python
+
+| Feature          | `int`                | `str`                   |
+| ---------------- | -------------------- | ----------------------- |
+| Data type        | Number               | Text                    |
+| Stored as        | Binary numeric value | Sequence of characters  |
+| Quotes required? | ❌ No                | ✅ Yes                  |
+| Supports math?   | ✅ Yes               | ❌ No (unless converted) |
+| Example          | `10 + 5 = 15`        | `"10" + "5" = "105"`    |
+
+
+# str → int
+num = int("10")
+print(num + 5)   # 15
+
+# int → str
+text = str(10)
+print(text + "5")  # "105"
+
+```
+
 ## Checking for an Element
 You can check if an element exists in a list using the `in` keyword.
 ```python
