@@ -52,6 +52,25 @@ You can sort a list in ascending or descending order using the `sort()` method.
 ```python
 my_list.sort()  # Sorts the list in ascending order
 ```
+Example 1:  Sort only if all elements are the same type
+```python
+nums = [1, 2, 3, 4, 5, 6]
+nums.sort()
+print(nums)   # [1, 2, 3, 4, 5, 6]
+```
+Example 2: Convert everything to str before sorting
+``` python
+new_list = [1, 2, 3, 'banana', 4, 5, 6]
+new_list = list(map(str, new_list))
+new_list.sort()
+print(new_list)   # ['1', '2', '3', '4', '5', '6', 'banana']
+```
+Example 3: Use a key function to tell Python how to compare
+``` python
+new_list = [1, 2, 3, 'banana', 4, 5, 6]
+new_list.sort(key=str)
+print(new_list)   # [1, 2, 3, 4, 5, 6, 'banana']
+```
 
 ## Checking for an Element
 You can check if an element exists in a list using the `in` keyword.
