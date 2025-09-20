@@ -125,42 +125,76 @@ A package is a collection of modules organized in directories. Packages help you
 Suppose you have a package structure as follows:
 
 ```
-my_package/
-    __init__.py
-    module1.py
-    module2.py
+/repo/python/          # project root
+│
+├── main.py                  # entry script
+│
+└── mymath/                  # package folder
+    ├── __init__.py          # exposes add() and sub()
+    ├── add_module.py        # contains add()
+    └── sub_module.py        # contains sub()
 ```
 
-You can use modules from this package as follows:
-
+# mymath/add_module.py
 ```python
-from my_package import module1
+def add(a, b):
+    return a + b
 
-result = module1.function_from_module1()
+if __name__ == "__main__":
+    print(add(3, 5))
 ```
 
-In this example, `my_package` is a Python package containing modules `module1` and `module2`.
+# mymath/sub_module.py
+``` python
+def sub(a, b):
+    return a - b
 
-## 2. How to Import a Package
+if __name__ == "__main__":
+    print(sub(5, 3))
 
-Importing a package or module in Python is done using the `import` statement. You can import the entire package, specific modules, or individual functions/variables from a module.
+```
 
-**Example:**
+# mymath/__init__.py
+``` python
+from .add_module import add
+from .sub_module import sub
+```
+# Import package in main script
+``` Python
+1. Import the whole package
+import mymath 
 
-```python
-# Import the entire module
-import math
-
-# Use functions/variables from the module
-result = math.sqrt(16)
+result = mymath.add(2, 4) 
 print(result)
 
-# Import specific function/variable from a module
-from math import pi
-print(pi)
+result = mymath.sub(10, 3) 
+print(result)
+```
+``` python 
+2. Import a single function
+from mymath import add 
+
+result = add(5, 7) 
+print(result)
+```
+``` python
+3. Import multiple functions
+from mymath import add, sub 
+
+print(add(8, 12)) 
+print(sub(20, 5))
+
+```
+``` python
+4. Import with alias
+import mymath as mm 
+
+print(mm.add(3, 3)) 
+print(mm.sub(9, 4))
+
 ```
 
-In this example, we import the `math` module and then use functions and variables from it. You can also import specific elements from modules using the `from module import element` syntax.
+
 
 ## 3. Python Workspaces
 
