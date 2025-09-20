@@ -160,8 +160,8 @@ from .add_module import add
 from .sub_module import sub
 ```
 # Import package in main script
-``` Python
 1. Import the whole package
+``` Python
 import mymath 
 
 result = mymath.add(2, 4) 
@@ -170,23 +170,26 @@ print(result)
 result = mymath.sub(10, 3) 
 print(result)
 ```
-``` python 
 2. Import a single function
+``` python 
+
 from mymath import add 
 
 result = add(5, 7) 
 print(result)
 ```
-``` python
 3. Import multiple functions
+``` python
+
 from mymath import add, sub 
 
 print(add(8, 12)) 
 print(sub(20, 5))
 
 ```
-``` python
 4. Import with alias
+``` python
+
 import mymath as mm 
 
 print(mm.add(3, 3)) 
