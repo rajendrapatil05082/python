@@ -1,3 +1,23 @@
+###
+import os
+
+folders = input("Enter the list of folder with space saparated: ").split()
+
+for folder in folders:
+    try:
+        print("== Listing files for the folders " + folder)
+        files = os.listdir(folder)
+    except  FileNotFoundError:
+        print("please provide the valid folder name, looks like this folder does not exists: " + folder)
+     
+        break
+    for file in files:
+        print(file)
+###
+
+
+
+
 import os
 
 def list_files_in_folder(folder_path):
