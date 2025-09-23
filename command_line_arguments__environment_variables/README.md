@@ -125,7 +125,7 @@ print(f"Secret Key: {secret_key}")
 print(f"Debug Mode: {debug}")
 ```
 
-# Install the python-dotenv package before executing the script #
+### Install the python-dotenv package before executing the script 
 ``` sh
 pip install python-dotenv
 ```
